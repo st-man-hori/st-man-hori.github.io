@@ -1,0 +1,104 @@
+---
+import Layout from '../layouts/Layout.astro';
+import GalPhrase from '../components/GalPhrase.astro';
+---
+
+<Layout title="♡ ギャルサイト ♡ - ちょーヤバイ！">
+  <main class="min-h-screen flex flex-col items-center justify-center p-4">
+    <!-- Header -->
+    <header class="text-center mb-12">
+      <h1 class="text-6xl md:text-8xl font-black text-white drop-shadow-2xl animate-bounce mb-4">
+        <span class="inline-block animate-rainbow">♡</span>
+        <span class="inline-block animate-pulse-fast text-gal-pink">ギ</span>
+        <span class="inline-block animate-bounce text-gal-purple">ャ</span>
+        <span class="inline-block animate-pulse-fast text-gal-gold">ル</span>
+        <span class="inline-block animate-bounce text-gal-neon">サ</span>
+        <span class="inline-block animate-pulse-fast text-gal-pink">イ</span>
+        <span class="inline-block animate-bounce text-gal-purple">ト</span>
+        <span class="inline-block animate-rainbow">♡</span>
+      </h1>
+      <p class="text-2xl md:text-3xl font-bold text-white drop-shadow-lg animate-sparkle">
+        ～2000年代の最強ギャルサイト～
+      </p>
+    </header>
+
+    <!-- Random Gal Phrase -->
+    <GalPhrase />
+
+    <!-- Main Content -->
+    <section class="max-w-4xl mx-auto text-center space-y-8">
+      <div class="bg-white/90 backdrop-blur-sm rounded-3xl p-8 shadow-2xl border-4 border-gal-pink transform -rotate-1 hover:rotate-0 transition-transform duration-300">
+        <h2 class="text-4xl font-black text-gal-purple mb-6 animate-rainbow">
+          ★ ウェルカム ★
+        </h2>
+        <p class="text-lg text-gray-800 leading-relaxed mb-4">
+          ちょーヤバイギャルサイトにようこそ♡<br />
+          ここは2000年代初頭のギャル文化を愛する最強のサイトです！
+        </p>
+        <p class="text-base text-gray-700">
+          キラキラ☆ギラギラなデザインと<br />
+          超絶カワイイアニメーションで<br />
+          あなたをアゲアゲ気分にしちゃいます♪
+        </p>
+      </div>
+
+      <div class="grid md:grid-cols-2 gap-6">
+        <div class="bg-gradient-to-br from-gal-pink to-gal-purple rounded-2xl p-6 shadow-xl border-2 border-white transform rotate-2 hover:-rotate-1 transition-transform duration-300">
+          <h3 class="text-2xl font-black text-white mb-4 drop-shadow-lg">
+            ✨ 特徴 ✨
+          </h3>
+          <ul class="text-white font-bold space-y-2">
+            <li>• 超絶キラキラデザイン</li>
+            <li>• ランダムギャル語表示</li>
+            <li>• アニメーション満載</li>
+            <li>• 2000年代テイスト</li>
+          </ul>
+        </div>
+
+        <div class="bg-gradient-to-br from-gal-gold to-gal-neon rounded-2xl p-6 shadow-xl border-2 border-white transform -rotate-2 hover:rotate-1 transition-transform duration-300">
+          <h3 class="text-2xl font-black text-black mb-4 drop-shadow-lg">
+            🌟 コンセプト 🌟
+          </h3>
+          <ul class="text-black font-bold space-y-2">
+            <li>• ギャル文化リスペクト</li>
+            <li>• ノスタルジック体験</li>
+            <li>• 可愛さ100%</li>
+            <li>• エモーショナル</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="mt-16 text-center">
+      <div class="bg-black/50 backdrop-blur-sm rounded-full px-8 py-4 border-2 border-gal-pink">
+        <p class="text-white font-bold animate-sparkle">
+          Made with ♡ for all ギャル lovers
+        </p>
+        <p class="text-gal-neon text-sm mt-2 animate-pulse-fast">
+          Astro × TailwindCSS × TypeScript
+        </p>
+      </div>
+    </footer>
+  </main>
+</Layout>
+
+<style>
+  /* Additional 2000s-style effects */
+  h1 {
+    text-shadow: 
+      0 0 5px rgba(255, 105, 180, 0.8),
+      0 0 10px rgba(255, 105, 180, 0.6),
+      0 0 15px rgba(255, 105, 180, 0.4),
+      0 0 20px rgba(255, 105, 180, 0.2);
+  }
+
+  section > div {
+    filter: drop-shadow(0 0 20px rgba(255, 255, 255, 0.3));
+  }
+
+  /* Hover effects for interactive elements */
+  section > div:hover {
+    filter: drop-shadow(0 0 30px rgba(255, 105, 180, 0.5));
+  }
+</style>

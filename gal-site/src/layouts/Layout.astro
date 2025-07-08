@@ -1,0 +1,80 @@
+---
+export interface Props {
+  title: string;
+}
+
+const { title } = Astro.props;
+---
+
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="description" content="ちょーヤバイギャルサイト♡" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <title>{title}</title>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700;900&display=swap');
+      
+      body {
+        font-family: 'Noto Sans JP', Arial Black, sans-serif;
+        background: linear-gradient(45deg, #ff69b4, #da70d6, #ffd700, #00ffff);
+        background-size: 400% 400%;
+        animation: gradient 8s ease infinite;
+        min-height: 100vh;
+        margin: 0;
+        overflow-x: hidden;
+      }
+
+      @keyframes gradient {
+        0% { background-position: 0% 50%; }
+        50% { background-position: 100% 50%; }
+        100% { background-position: 0% 50%; }
+      }
+
+      .sparkle-bg {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        pointer-events: none;
+        z-index: -1;
+      }
+
+      .sparkle {
+        position: absolute;
+        background: white;
+        border-radius: 50%;
+        animation: sparkle 2s infinite ease-in-out;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="sparkle-bg" id="sparkle-container"></div>
+    <slot />
+    
+    <script>
+      // Create sparkle effects
+      function createSparkle() {
+        const sparkle = document.createElement('div');
+        sparkle.className = 'sparkle';
+        sparkle.style.left = Math.random() * 100 + '%';
+        sparkle.style.top = Math.random() * 100 + '%';
+        sparkle.style.width = Math.random() * 4 + 2 + 'px';
+        sparkle.style.height = sparkle.style.width;
+        sparkle.style.animationDelay = Math.random() * 2 + 's';
+        
+        document.getElementById('sparkle-container')?.appendChild(sparkle);
+        
+        setTimeout(() => {
+          sparkle.remove();
+        }, 2000);
+      }
+
+      // Create sparkles periodically
+      setInterval(createSparkle, 300);
+    </script>
+  </body>
+</html>
