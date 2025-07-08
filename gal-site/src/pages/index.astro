@@ -4,101 +4,123 @@ import GalPhrase from '../components/GalPhrase.astro';
 ---
 
 <Layout title="♡ ギャルサイト ♡ - ちょーヤバイ！">
-  <main class="min-h-screen flex flex-col items-center justify-center p-4">
-    <!-- Header -->
-    <header class="text-center mb-12">
-      <h1 class="text-6xl md:text-8xl font-black text-white drop-shadow-2xl animate-bounce mb-4">
-        <span class="inline-block animate-rainbow">♡</span>
-        <span class="inline-block animate-pulse-fast text-gal-pink">ギ</span>
-        <span class="inline-block animate-bounce text-gal-purple">ャ</span>
-        <span class="inline-block animate-pulse-fast text-gal-gold">ル</span>
-        <span class="inline-block animate-bounce text-gal-neon">サ</span>
-        <span class="inline-block animate-pulse-fast text-gal-pink">イ</span>
-        <span class="inline-block animate-bounce text-gal-purple">ト</span>
-        <span class="inline-block animate-rainbow">♡</span>
-      </h1>
-      <p class="text-2xl md:text-3xl font-bold text-white drop-shadow-lg animate-sparkle">
-        ～2000年代の最強ギャルサイト～
-      </p>
-    </header>
-
-    <!-- Random Gal Phrase -->
-    <GalPhrase />
-
-    <!-- Main Content -->
-    <section class="max-w-4xl mx-auto text-center space-y-8">
-      <div class="bg-white/90 backdrop-blur-sm rounded-3xl p-8 shadow-2xl border-4 border-gal-pink transform -rotate-1 hover:rotate-0 transition-transform duration-300">
-        <h2 class="text-4xl font-black text-gal-purple mb-6 animate-rainbow">
-          ★ ウェルカム ★
-        </h2>
-        <p class="text-lg text-gray-800 leading-relaxed mb-4">
-          ちょーヤバイギャルサイトにようこそ♡<br />
+  <!-- Classic marquee header -->
+  <marquee behavior="scroll" direction="left">
+    ★☆★ ようこそ！超絶カワイイギャルサイトへ ★☆★
+  </marquee>
+  
+  <br />
+  
+  <!-- Main content table -->
+  <table align="center" width="90%" cellpadding="0" cellspacing="0">
+    <tr>
+      <td class="header-cell" colspan="2">
+        <font size="6" color="white">
+          <b>♡ ギャルサイト ♡</b>
+        </font>
+        <br />
+        <font size="4" color="yellow">
+          ～2000年代の最強ギャルサイト～
+        </font>
+      </td>
+    </tr>
+    
+    <tr>
+      <td class="content-cell" colspan="2" align="center">
+        <font size="5" color="#FF1493">
+          <b class="blink">✧･ﾟ: *✧･ﾟ:* ちょーヤバイ！ *:･ﾟ✧*:･ﾟ✧</b>
+        </font>
+        <br /><br />
+        <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzAiIGhlaWdodD0iMzAiIHZpZXdCb3g9IjAgMCAzMCAzMCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTE1IDNMMTYuMDkgMTAuMjZMMjIgNUwxOC43NCAxMS4wOUwyNyAxMkwxOS43NCAxMi45MUwyNSAyMkwxNi4wOSAxOC43NEwxNSAyN0wxMy45MSAxOC43NEw1IDIyTDExLjI2IDEyLjkxTDMgMTJMMTEuMjYgMTEuMDlMOCA1TDEzLjkxIDEwLjI2TDE1IDNaIiBmaWxsPSIjRkZENzAwIi8+Cjwvc3ZnPgo=" alt="★" />
+        <font size="4" color="#000">
           ここは2000年代初頭のギャル文化を愛する最強のサイトです！
-        </p>
-        <p class="text-base text-gray-700">
-          キラキラ☆ギラギラなデザインと<br />
-          超絶カワイイアニメーションで<br />
-          あなたをアゲアゲ気分にしちゃいます♪
-        </p>
-      </div>
-
-      <div class="grid md:grid-cols-2 gap-6">
-        <div class="bg-gradient-to-br from-gal-pink to-gal-purple rounded-2xl p-6 shadow-xl border-2 border-white transform rotate-2 hover:-rotate-1 transition-transform duration-300">
-          <h3 class="text-2xl font-black text-white mb-4 drop-shadow-lg">
-            ✨ 特徴 ✨
-          </h3>
-          <ul class="text-white font-bold space-y-2">
-            <li>• 超絶キラキラデザイン</li>
-            <li>• ランダムギャル語表示</li>
-            <li>• アニメーション満載</li>
-            <li>• 2000年代テイスト</li>
-          </ul>
-        </div>
-
-        <div class="bg-gradient-to-br from-gal-gold to-gal-neon rounded-2xl p-6 shadow-xl border-2 border-white transform -rotate-2 hover:rotate-1 transition-transform duration-300">
-          <h3 class="text-2xl font-black text-black mb-4 drop-shadow-lg">
-            🌟 コンセプト 🌟
-          </h3>
-          <ul class="text-black font-bold space-y-2">
-            <li>• ギャル文化リスペクト</li>
-            <li>• ノスタルジック体験</li>
-            <li>• 可愛さ100%</li>
-            <li>• エモーショナル</li>
-          </ul>
-        </div>
-      </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="mt-16 text-center">
-      <div class="bg-black/50 backdrop-blur-sm rounded-full px-8 py-4 border-2 border-gal-pink">
-        <p class="text-white font-bold animate-sparkle">
-          Made with ♡ for all ギャル lovers
-        </p>
-        <p class="text-gal-neon text-sm mt-2 animate-pulse-fast">
+        </font>
+        <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzAiIGhlaWdodD0iMzAiIHZpZXdCb3g9IjAgMCAzMCAzMCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTE1IDNMMTYuMDkgMTAuMjZMMjIgNUwxOC43NCAxMS4wOUwyNyAxMkwxOS43NCAxMi45MUwyNSAyMkwxNi4wOSAxOC43NEwxNSAyN0wxMy45MSAxOC43NEw1IDIyTDExLjI2IDEyLjkxTDMgMTJMMTEuMjYgMTEuMDlMOCA1TDEzLjkxIDEwLjI2TDE1IDNaIiBmaWxsPSIjRkZENzAwIi8+Cjwvc3ZnPgo=" alt="★" />
+      </td>
+    </tr>
+    
+    <tr>
+      <td class="content-cell" colspan="2" align="center">
+        <GalPhrase />
+      </td>
+    </tr>
+    
+    <tr>
+      <td class="header-cell" width="50%">
+        <font size="4" color="white">
+          <b>✨ 特徴 ✨</b>
+        </font>
+      </td>
+      <td class="header-cell" width="50%">
+        <font size="4" color="white">
+          <b>🌟 コンセプト 🌟</b>
+        </font>
+      </td>
+    </tr>
+    
+    <tr>
+      <td class="content-cell">
+        <font size="3" color="#000">
+          <b>
+            • 超絶キラキラデザイン<br />
+            • ランダムギャル語表示<br />
+            • アニメーション満載<br />
+            • 2000年代テイスト<br />
+          </b>
+        </font>
+      </td>
+      <td class="content-cell">
+        <font size="3" color="#000">
+          <b>
+            • ギャル文化リスペクト<br />
+            • ノスタルジック体験<br />
+            • 可愛さ100%<br />
+            • エモーショナル<br />
+          </b>
+        </font>
+      </td>
+    </tr>
+    
+    <tr>
+      <td class="content-cell" colspan="2" align="center">
+        <hr color="#FF69B4" size="3" />
+        <font size="3" color="#000">
+          <b>キラキラ☆ギラギラなデザインで<br />
+          あなたをアゲアゲ気分にしちゃいます♪</b>
+        </font>
+        <hr color="#FF69B4" size="3" />
+      </td>
+    </tr>
+  </table>
+  
+  <br />
+  
+  <!-- Classic footer -->
+  <table align="center" width="80%" cellpadding="5" cellspacing="0" style="border: 2px solid #000; background-color: #000;">
+    <tr>
+      <td align="center">
+        <font size="2" color="#FFD700">
+          <b class="blink">Made with ♡ for all ギャル lovers</b>
+        </font>
+        <br />
+        <font size="1" color="#00FFFF">
           Astro × TailwindCSS × TypeScript
-        </p>
-      </div>
-    </footer>
-  </main>
+        </font>
+      </td>
+    </tr>
+  </table>
+  
+  <br />
+  
+  <!-- Classic visitor counter look -->
+  <center>
+    <font size="1" color="white">
+      <b>あなたは</b>
+      <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAiIGhlaWdodD0iMjAiIHZpZXdCb3g9IjAgMCAyMCAyMCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjIwIiBoZWlnaHQ9IjIwIiBmaWxsPSIjMDAwIi8+Cjx0ZXh0IHg9IjEwIiB5PSIxNSIgZm9udC1mYW1pbHk9IkFyaWFsLCBzYW5zLXNlcmlmIiBmb250LXNpemU9IjE0IiBmaWxsPSIjRkZENzAwIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIj4xPC90ZXh0Pgo8L3N2Zz4K" alt="1" />
+<img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAiIGhlaWdodD0iMjAiIHZpZXdCb3g9IjAgMCAyMCAyMCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjIwIiBoZWlnaHQ9IjIwIiBmaWxsPSIjMDAwIi8+Cjx0ZXh0IHg9IjEwIiB5PSIxNSIgZm9udC1mYW1pbHk9IkFyaWFsLCBzYW5zLXNlcmlmIiBmb250LXNpemU9IjE0IiBmaWxsPSIjRkZENzAwIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIj4zPC90ZXh0Pgo8L3N2Zz4K" alt="3" />
+<img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAiIGhlaWdodD0iMjAiIHZpZXdCb3g9IjAgMCAyMCAyMCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjIwIiBoZWlnaHQ9IjIwIiBmaWxsPSIjMDAwIi8+Cjx0ZXh0IHg9IjEwIiB5PSIxNSIgZm9udC1mYW1pbHk9IkFyaWFsLCBzYW5zLXNlcmlmIiBmb250LXNpemU9IjE0IiBmaWxsPSIjRkZENzAwIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIj4zPC90ZXh0Pgo8L3N2Zz4K" alt="3" />
+<img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAiIGhlaWdodD0iMjAiIHZpZXdCb3g9IjAgMCAyMCAyMCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjIwIiBoZWlnaHQ9IjIwIiBmaWxsPSIjMDAwIi8+Cjx0ZXh0IHg9IjEwIiB5PSIxNSIgZm9udC1mYW1pbHk9IkFyaWFsLCBzYW5zLXNlcmlmIiBmb250LXNpemU9IjE0IiBmaWxsPSIjRkZENzAwIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIj43PC90ZXh0Pgo8L3N2Zz4K" alt="7" />
+      <b>人目のお客様です♡</b>
+    </font>
+  </center>
 </Layout>
-
-<style>
-  /* Additional 2000s-style effects */
-  h1 {
-    text-shadow: 
-      0 0 5px rgba(255, 105, 180, 0.8),
-      0 0 10px rgba(255, 105, 180, 0.6),
-      0 0 15px rgba(255, 105, 180, 0.4),
-      0 0 20px rgba(255, 105, 180, 0.2);
-  }
-
-  section > div {
-    filter: drop-shadow(0 0 20px rgba(255, 255, 255, 0.3));
-  }
-
-  /* Hover effects for interactive elements */
-  section > div:hover {
-    filter: drop-shadow(0 0 30px rgba(255, 105, 180, 0.5));
-  }
-</style>
