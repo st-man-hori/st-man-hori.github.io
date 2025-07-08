@@ -1,0 +1,44 @@
+---
+import galPhrases from '../data/gal-phrases.json';
+
+// Get a random phrase on each page load
+const randomPhrase = galPhrases[Math.floor(Math.random() * galPhrases.length)];
+---
+
+<table align="center" width="80%" cellpadding="10" cellspacing="0" style="border: 3px solid #FFD700; background-color: #FFDDFF;">
+  <tr>
+    <td align="center" style="background-color: #FF1493; border: 2px solid #000;">
+      <font size="2" color="white">
+        <b>★ 今日のギャル語 ★</b>
+      </font>
+    </td>
+  </tr>
+  <tr>
+    <td align="center" style="background-color: #FFFFFF; border: 2px solid #FF69B4;">
+      <font size="4" color="#FF1493">
+        <b class="blink" id="gal-phrase">{randomPhrase}</b>
+      </font>
+      <br /><br />
+      <input 
+        type="button" 
+        value="新しいフレーズ♡" 
+        id="phrase-button"
+        style="background-color: #00FFFF; border: 2px solid #000; font-weight: bold; font-size: 14px; padding: 5px 15px; cursor: pointer;"
+        onmouseover="this.style.backgroundColor='#FFD700'"
+        onmouseout="this.style.backgroundColor='#00FFFF'"
+      />
+    </td>
+  </tr>
+</table>
+
+<script>
+  import galPhrases from '../data/gal-phrases.json';
+  
+  document.getElementById('phrase-button')?.addEventListener('click', () => {
+    const phraseElement = document.getElementById('gal-phrase');
+    if (phraseElement) {
+      const newPhrase = galPhrases[Math.floor(Math.random() * galPhrases.length)];
+      phraseElement.textContent = newPhrase;
+    }
+  });
+</script>

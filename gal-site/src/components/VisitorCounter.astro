@@ -1,0 +1,39 @@
+---
+// Simple visitor counter component for static sites
+---
+
+<center>
+  <font size="1" color="white">
+    <b>あなたは</b>
+    <span id="visitor-count" style="display: inline; font-family: 'Courier New', monospace; background-color: #000; color: #FFD700; border: 1px solid #FFD700; padding: 2px 5px; margin: 0 3px;">0000</span>
+    <b>人目のお客様です♡</b>
+  </font>
+</center>
+
+<script>
+  // Simple visitor counter using localStorage for persistence
+  function updateVisitorCount() {
+    const countElement = document.getElementById('visitor-count');
+    if (!countElement) return;
+    
+    // Get current count from localStorage, default to a random starting number for realism
+    let currentCount = localStorage.getItem('gal-site-visitor-count');
+    
+    if (!currentCount) {
+      // Start with a random number between 1000-9999 for authenticity
+      currentCount = Math.floor(Math.random() * 8999) + 1000;
+      localStorage.setItem('gal-site-visitor-count', currentCount.toString());
+    } else {
+      // Increment the count
+      currentCount = parseInt(currentCount) + 1;
+      localStorage.setItem('gal-site-visitor-count', currentCount.toString());
+    }
+    
+    // Pad with zeros to maintain 4-digit display
+    const displayCount = currentCount.toString().padStart(4, '0');
+    countElement.textContent = displayCount;
+  }
+  
+  // Update count when page loads
+  document.addEventListener('DOMContentLoaded', updateVisitorCount);
+</script>
