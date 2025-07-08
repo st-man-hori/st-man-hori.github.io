@@ -1,6 +1,7 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import GalPhrase from '../components/GalPhrase.astro';
+import VisitorCounter from '../components/VisitorCounter.astro';
 ---
 
 <Layout title="♡ ギャルサイト ♡ - ちょーヤバイ！">
@@ -28,12 +29,12 @@ import GalPhrase from '../components/GalPhrase.astro';
     <tr>
       <td class="content-cell" colspan="2" align="center">
         <font size="5" color="#FF1493">
-          <b class="blink">✧･ﾟ: *✧･ﾟ:* ちょーヤバイ！ *:･ﾟ✧*:･ﾟ✧</b>
+          <b class="blink sparkle">✧･ﾟ: *✧･ﾟ:* ちょーヤバイ！ *:･ﾟ✧*:･ﾟ✧</b>
         </font>
         <br /><br />
         <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzAiIGhlaWdodD0iMzAiIHZpZXdCb3g9IjAgMCAzMCAzMCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTE1IDNMMTYuMDkgMTAuMjZMMjIgNUwxOC43NCAxMS4wOUwyNyAxMkwxOS43NCAxMi45MUwyNSAyMkwxNi4wOSAxOC43NEwxNSAyN0wxMy45MSAxOC43NEw1IDIyTDExLjI2IDEyLjkxTDMgMTJMMTEuMjYgMTEuMDlMOCA1TDEzLjkxIDEwLjI2TDE1IDNaIiBmaWxsPSIjRkZENzAwIi8+Cjwvc3ZnPgo=" alt="★" />
         <font size="4" color="#000">
-          ここは2000年代初頭のギャル文化を愛する最強のサイトです！
+          <span class="heart-float">ここは2000年代初頭のギャル文化を愛する最強のサイトです！</span>
         </font>
         <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzAiIGhlaWdodD0iMzAiIHZpZXdCb3g9IjAgMCAzMCAzMCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTE1IDNMMTYuMDkgMTAuMjZMMjIgNUwxOC43NCAxMS4wOUwyNyAxMkwxOS43NCAxMi45MUwyNSAyMkwxNi4wOSAxOC43NEwxNSAyN0wxMy45MSAxOC43NEw1IDIyTDExLjI2IDEyLjkxTDMgMTJMMTEuMjYgMTEuMDlMOCA1TDEzLjkxIDEwLjI2TDE1IDNaIiBmaWxsPSIjRkZENzAwIi8+Cjwvc3ZnPgo=" alt="★" />
       </td>
@@ -48,12 +49,12 @@ import GalPhrase from '../components/GalPhrase.astro';
     <tr>
       <td class="header-cell" width="50%">
         <font size="4" color="white">
-          <b>✨ 特徴 ✨</b>
+          <b class="sparkle">✨ 特徴 ✨</b>
         </font>
       </td>
       <td class="header-cell" width="50%">
         <font size="4" color="white">
-          <b>🌟 コンセプト 🌟</b>
+          <b class="sparkle">🌟 コンセプト 🌟</b>
         </font>
       </td>
     </tr>
@@ -85,7 +86,7 @@ import GalPhrase from '../components/GalPhrase.astro';
       <td class="content-cell" colspan="2" align="center">
         <hr color="#FF69B4" size="3" />
         <font size="3" color="#000">
-          <b>キラキラ☆ギラギラなデザインで<br />
+          <b class="heart-float">キラキラ☆ギラギラなデザインで<br />
           あなたをアゲアゲ気分にしちゃいます♪</b>
         </font>
         <hr color="#FF69B4" size="3" />
@@ -112,10 +113,6 @@ import GalPhrase from '../components/GalPhrase.astro';
   
   <br />
   
-  <!-- Classic visitor counter look -->
-  <center>
-    <font size="1" color="white">
-      <b>あなたは</b><img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAiIGhlaWdodD0iMjAiIHZpZXdCb3g9IjAgMCAyMCAyMCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjIwIiBoZWlnaHQ9IjIwIiBmaWxsPSIjMDAwIi8+Cjx0ZXh0IHg9IjEwIiB5PSIxNSIgZm9udC1mYW1pbHk9IkFyaWFsLCBzYW5zLXNlcmlmIiBmb250LXNpemU9IjE0IiBmaWxsPSIjRkZENzAwIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIj4xPC90ZXh0Pgo8L3N2Zz4K" alt="1" style="display: inline; vertical-align: middle;" /><img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAiIGhlaWdodD0iMjAiIHZpZXdCb3g9IjAgMCAyMCAyMCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjIwIiBoZWlnaHQ9IjIwIiBmaWxsPSIjMDAwIi8+Cjx0ZXh0IHg9IjEwIiB5PSIxNSIgZm9udC1mYW1pbHk9IkFyaWFsLCBzYW5zLXNlcmlmIiBmb250LXNpemU9IjE0IiBmaWxsPSIjRkZENzAwIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIj4zPC90ZXh0Pgo8L3N2Zz4K" alt="3" style="display: inline; vertical-align: middle;" /><img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAiIGhlaWdodD0iMjAiIHZpZXdCb3g9IjAgMCAyMCAyMCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjIwIiBoZWlnaHQ9IjIwIiBmaWxsPSIjMDAwIi8+Cjx0ZXh0IHg9IjEwIiB5PSIxNSIgZm9udC1mYW1pbHk9IkFyaWFsLCBzYW5zLXNlcmlmIiBmb250LXNpemU9IjE0IiBmaWxsPSIjRkZENzAwIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIj4zPC90ZXh0Pgo8L3N2Zz4K" alt="3" style="display: inline; vertical-align: middle;" /><img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAiIGhlaWdodD0iMjAiIHZpZXdCb3g9IjAgMCAyMCAyMCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjIwIiBoZWlnaHQ9IjIwIiBmaWxsPSIjMDAwIi8+Cjx0ZXh0IHg9IjEwIiB5PSIxNSIgZm9udC1mYW1pbHk9IkFyaWFsLCBzYW5zLXNlcmlmIiBmb250LXNpemU9IjE0IiBmaWxsPSIjRkZENzAwIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIj43PC90ZXh0Pgo8L3N2Zz4K" alt="7" style="display: inline; vertical-align: middle;" /><b>人目のお客様です♡</b>
-    </font>
-  </center>
+  <!-- Dynamic visitor counter -->
+  <VisitorCounter />
 </Layout>
