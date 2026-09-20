@@ -49,7 +49,7 @@ header.hero::after {
   border: 1.5px solid rgba(255, 255, 255, .7);
 }
 .hero .deco { display: none; }
-.qr-box { display: none; }
+.qr-box, .cover { display: none; }
 
 /* ---------- 日ごとの見出し ---------- */
 .day-title {
@@ -136,11 +136,25 @@ footer p { font-size: .82rem; color: var(--sub); }
 @media print {
   body { background: #fff; font-size: 11pt; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
   .wrap { max-width: none; padding: 0; }
-  header.hero { box-shadow: none; padding: 10px 150px 10px 20px; margin-bottom: 6px; min-height: 110px; }
-  .hero h1 { font-size: 22pt; margin: 2px 0 6px; }
-  .hero::after { display: none; }
+  header.hero { display: none; }
+  .cover {
+    display: flex; flex-direction: column; justify-content: space-between; align-items: center; gap: 8mm;
+    height: 186mm; break-after: page; padding: 16mm 20mm 14mm; position: relative; overflow: hidden;
+    background: linear-gradient(160deg, #1f2a44 0%, #4b5fd0 55%, #ef6f5e 130%); color: #fff; border-radius: 6mm;
+  }
+  .cover::after {
+    content: ""; position: absolute; right: -30mm; bottom: -45mm; width: 110mm; height: 110mm; border-radius: 50%;
+    background: radial-gradient(circle at 30% 30%, #ffd88a, #ef6f5e 70%); opacity: .55;
+  }
+  .cover-main { position: relative; z-index: 1; text-align: center; width: 100%; }
+  .cover .eyebrow { font-size: 10pt; letter-spacing: .35em; opacity: .85; font-weight: 700; }
+  .cover h1 { margin: 6mm 0; font-size: 44pt; line-height: 1.2; font-weight: 900; }
+  .cover .dates { display: inline-block; font-size: 16pt; font-weight: 700; padding: 1mm 8mm; border: 1.5px solid rgba(255,255,255,.8); border-radius: 999px; }
+  .cover .stamps { margin-top: 8mm; font-size: 26pt; letter-spacing: .3em; }
+  .cover .name { margin: 10mm auto 0; width: 110mm; display: flex; align-items: flex-end; gap: 4mm; font-size: 14pt; font-weight: 700; }
+  .cover .name span { flex: 1; border-bottom: 2px solid #fff; height: 9mm; }
   .qr-box {
-    display: block; position: absolute; right: 14px; top: 14px; width: 120px; text-align: center; z-index: 2;
+    display: block; position: relative; z-index: 1; width: 34mm; text-align: center;
     background: #fff; color: var(--ink); border-radius: 10px; padding: 6px; font-size: 8pt; font-weight: 700; line-height: 1.3;
   }
   #qr img, #qr canvas { width: 100% !important; height: auto !important; display: block; }
@@ -178,8 +192,18 @@ footer p { font-size: .82rem; color: var(--sub); }
   <div class="eyebrow">FAMILY TRIP · YAMANASHI</div>
   <h1>やまなし旅行<br>のしおり</h1>
   <span class="dates">9/21(月) 〜 9/22(火)</span>
-  <div class="qr-box">📱スマホで見る<div id="qr"></div>このしおりのページ</div>
 </header>
+
+<section class="cover" aria-hidden="true">
+  <div class="cover-main">
+    <div class="eyebrow">FAMILY TRIP · YAMANASHI</div>
+    <h1>やまなし旅行<br>のしおり</h1>
+    <div class="dates">9/21(月) 〜 9/22(火)</div>
+    <div class="stamps">🗻 💎 🍜 ♨️ 🚗</div>
+    <div class="name">なまえ<span></span></div>
+  </div>
+  <div class="qr-box">📱スマホで見る<div id="qr"></div>このしおりのページ</div>
+</section>
 
 <main id="app"></main>
 
