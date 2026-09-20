@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@500;700;900&display=swap" rel="stylesheet">
+<title>山梨旅行のしおり 9/21〜9/22</title>
+<style>
+:root {
+  --bg: #faf6ef;
+  --ink: #1f2a44;
+  --sub: #6b7185;
+  --line: #e4dccd;
+  --card: #ffffff;
+  --coral: #ef6f5e;
+  --teal: #1fa39a;
+  --mustard: #e9a820;
+  --indigo: #4b5fd0;
+  --rose: #d9508a;
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  font-family: "Zen Maru Gothic", "Hiragino Maru Gothic ProN", "Yu Gothic", "Meiryo", system-ui, sans-serif;
+  color: var(--ink);
+  background: var(--bg);
+  line-height: 1.65;
+}
+.wrap { max-width: 800px; margin: 0 auto; padding: 16px 16px 40px; }
+
+/* ---------- ヘッダー ---------- */
+header.hero {
+  position: relative; overflow: hidden;
+  background: linear-gradient(160deg, #1f2a44 0%, #4b5fd0 55%, #ef6f5e 130%);
+  color: #fff; border-radius: 24px; padding: 40px 28px 32px; margin-bottom: 8px;
+  box-shadow: 0 12px 30px rgba(31, 42, 68, .25);
+}
+header.hero::after {
+  content: ""; position: absolute; right: -40px; bottom: -70px; width: 300px; height: 300px; border-radius: 50%;
+  background: radial-gradient(circle at 30% 30%, #ffd88a, #ef6f5e 70%); opacity: .55;
+}
+.hero .eyebrow { font-size: .8rem; letter-spacing: .3em; opacity: .8; font-weight: 700; }
+.hero h1 { margin: 6px 0 16px; font-size: clamp(2rem, 8vw, 3.2rem); line-height: 1.2; font-weight: 900; position: relative; z-index: 1; }
+.hero .dates {
+  position: relative; z-index: 1; display: inline-block;
+  font-weight: 700; font-size: 1.05rem; padding: 4px 16px; border-radius: 999px;
+  border: 1.5px solid rgba(255, 255, 255, .7);
+}
+.hero .deco { display: none; }
+.qr-box { display: none; }
+
+/* ---------- 日ごとの見出し ---------- */
+.day-title {
+  display: flex; align-items: baseline; gap: 14px;
+  margin: 44px 0 20px; font-size: 1.1rem; font-weight: 700; color: var(--sub);
+}
+.day-title .pill { font-size: 2.2rem; font-weight: 900; color: var(--ink); letter-spacing: .02em; }
+.day-title .pill::before { content: ""; display: inline-block; width: 10px; height: 1.6rem; border-radius: 4px; background: var(--coral); margin-right: 12px; vertical-align: -0.2rem; }
+.day-title.d2 .pill::before { background: var(--indigo); }
+.day-title span:last-child { font-size: 1.3rem; }
+
+/* ---------- タイムライン ---------- */
+.timeline { list-style: none; margin: 0; padding: 0; position: relative; }
+.timeline::before {
+  content: ""; position: absolute; left: 105px; top: 10px; bottom: 10px; width: 0; border-left: 2px solid var(--line);
+}
+.item { position: relative; display: grid; grid-template-columns: 84px 1fr; gap: 34px; margin-bottom: 18px; }
+.item::before {
+  content: ""; position: absolute; left: 99px; top: 10px; width: 14px; height: 14px; border-radius: 50%;
+  background: var(--c, var(--indigo)); border: 3px solid var(--bg); box-shadow: 0 0 0 2px var(--c, var(--indigo));
+}
+.time {
+  text-align: right; font-weight: 900; line-height: 1.15; color: var(--ink); font-size: 1.35rem; padding-top: 2px;
+  font-variant-numeric: tabular-nums;
+}
+.time small { display: block; font-size: .78rem; font-weight: 700; color: var(--sub); margin-top: 2px; }
+.card {
+  background: var(--card); border: 1px solid var(--line); border-left: 6px solid var(--c, var(--indigo));
+  border-radius: 14px; padding: 12px 16px 14px; box-shadow: 0 4px 14px rgba(31, 42, 68, .06);
+}
+.card h3 { margin: 0 0 4px; font-size: 1.2rem; line-height: 1.4; }
+.tag {
+  display: inline-block; font-size: .72rem; font-weight: 700; color: var(--c, var(--indigo));
+  border: 1.5px solid var(--c, var(--indigo)); border-radius: 999px; padding: 0 9px; margin-right: 8px; vertical-align: 2px; line-height: 1.5;
+}
+.note { margin: 2px 0; font-size: .95rem; color: var(--sub); }
+.addr { margin: 4px 0; font-size: .9rem; color: var(--sub); }
+.addr::before { content: "📍 "; }
+.links { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 8px; }
+.btn {
+  font: inherit; font-size: .82rem; font-weight: 700; cursor: pointer; text-decoration: none;
+  color: var(--ink); background: #fff; border: 1.5px solid var(--ink); border-radius: 999px; padding: 2px 14px;
+  transition: background .15s, color .15s;
+}
+.btn:hover { background: var(--ink); color: #fff; }
+.map { margin-top: 10px; display: none; }
+.map.open { display: block; }
+.qr-mini { display: none; }
+.map iframe { width: 100%; height: 260px; border: 1px solid var(--line); border-radius: 12px; }
+
+.type-sight { --c: var(--indigo); }
+.type-eat   { --c: var(--coral); }
+.type-move  { --c: var(--teal); }
+.type-hotel { --c: var(--mustard); }
+.type-onsen { --c: var(--rose); }
+
+/* 候補リスト */
+.cands { margin: 10px 0 0; padding: 0; list-style: none; display: grid; gap: 8px; }
+.cands li { background: var(--bg); border: 1px solid var(--line); border-radius: 10px; padding: 8px 12px; }
+.cands b { font-size: 1rem; }
+
+/* 移動・メモ行 */
+.mini .card { box-shadow: none; background: transparent; border-color: transparent; border-left-color: var(--c); padding-top: 6px; padding-bottom: 6px; }
+.mini .card h3 { font-size: 1rem; margin: 0; }
+.mini .time { font-size: 1.1rem; }
+
+footer { text-align: center; margin: 44px 0 20px; }
+footer .print-btn { font-size: 1rem; padding: 8px 26px; background: var(--ink); color: #fff; }
+footer .print-btn:hover { background: var(--coral); border-color: var(--coral); }
+footer p { font-size: .82rem; color: var(--sub); }
+
+@media (max-width: 520px) {
+  .wrap { padding: 10px 10px 30px; }
+  header.hero { padding: 30px 20px 26px; }
+  .item { grid-template-columns: 58px 1fr; gap: 26px; }
+  .timeline::before { left: 74px; }
+  .item::before { left: 68px; }
+  .time { font-size: 1.05rem; }
+  .card h3 { font-size: 1.08rem; }
+}
+
+/* ---------- 印刷 ---------- */
+@page { size: A4; margin: 10mm; }
+@media print {
+  body { background: #fff; font-size: 11pt; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  .wrap { max-width: none; padding: 0; }
+  header.hero { box-shadow: none; padding: 16px 150px 16px 20px; margin-bottom: 4px; min-height: 130px; }
+  .qr-box {
+    display: block; position: absolute; right: 14px; top: 14px; width: 120px; text-align: center; z-index: 2;
+    background: #fff; color: var(--ink); border-radius: 10px; padding: 6px; font-size: 8pt; font-weight: 700; line-height: 1.3;
+  }
+  #qr img, #qr canvas { width: 100% !important; height: auto !important; display: block; }
+  .day-title { margin: 12px 0 10px; }
+  .day-title.d2 { break-before: page; }
+  .item { break-inside: avoid; margin-bottom: 8px; }
+  .card { box-shadow: none; padding: 6px 12px; }
+  .card h3 { font-size: 13pt; }
+  .btn, .map, footer .print-btn, .links { display: none !important; }
+  .addr { font-size: 9.5pt; }
+  .cands li { padding: 4px 10px; }
+  .no-print { display: none !important; }
+  .card, .cands li { display: flow-root; }
+  .qr-mini { display: block; float: right; width: 74px; margin: 0 0 0 8px; text-align: center; font-size: 8pt; font-weight: 700; line-height: 1.2; }
+  .qr-mini img, .qr-mini canvas { width: 100% !important; height: auto !important; display: block; }
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header class="hero">
+  <div class="eyebrow">FAMILY TRIP · YAMANASHI</div>
+  <h1>やまなし旅行<br>のしおり</h1>
+  <span class="dates">9/21(月) 〜 9/22(火)</span>
+  <div class="qr-box">📱スマホで見る<div id="qr"></div>このしおりのページ</div>
+</header>
+
+<main id="app"></main>
+
+<footer class="no-print">
+  <button class="btn print-btn" onclick="window.print()">🖨️ 印刷する（QRコード付き）</button>
+  <p>地図は「地図を見る」ボタンで表示されます</p>
+</footer>
+
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+<script>
+const TYPES = { sight: "おでかけ", eat: "ごはん", move: "いどう", hotel: "おとまり", onsen: "おんせん" };
+
+// 位置情報つき(place)と、移動などのメモ(note)
+const DAYS = [
+  { id: "d1", title: "1日目", date: "9/21", items: [
+    { time: "6:00", label: "しゅっぱつ", type: "move", title: "出発！", note: "河口湖へ向かうよ 🚗" },
+    { time: "10:00", label: "ごろ", type: "move", title: "河口湖周辺に到着", mini: true },
+    { time: "10:00", end: "11:00", type: "sight", title: "宝石の博物館",
+      url: "https://www.gemmuseum.jp/", addr: "山梨県南都留郡富士河口湖町船津6713" },
+    { time: "11:00", end: "13:00", type: "eat", title: "お昼ごはん", note: "候補から選ぼう！",
+      cands: [
+        { name: "パンダニエル", url: "https://pan-daniel.jp/", addr: "山梨県南都留郡富士河口湖町船津3991" },
+        { name: "ほうとう不動 河口湖北本店", url: "http://www.houtou-fudou.jp/index.html", addr: "山梨県南都留郡富士河口湖町船津1672-2" },
+        { name: "小作 河口湖店", url: "https://www.kosaku.co.jp/tenpo-kawagutikoten", addr: "山梨県南都留郡富士河口湖町船津1638-1" },
+        { name: "ふなり 河口湖・山中湖店", url: "https://www.funari.jp/shop/kawaguchiko_yamanakako", addr: "山梨県南都留郡富士河口湖町船津6931" },
+        { name: "チューズチョイス", url: "http://www.choosechoice.co.jp/information/", addr: "山梨県南都留郡富士河口湖町船津6832" }
+      ] },
+    { time: "13:30", end: "15:00", type: "sight", title: "石の博物館",
+      url: "https://stone-museum.jp/", addr: "山梨県南都留郡富士河口湖町船津1200-1" },
+    { time: "15:00", end: "16:30", type: "sight", title: "旅の駅 kawaguchiko base",
+      url: "https://www.kawaguchikobase.com/", addr: "山梨県南都留郡富士河口湖町河口521-4" },
+    { time: "16:30", end: "17:30", type: "move", title: "甲府・笛吹市へ移動", mini: true },
+    { time: "17:30", end: "18:00", type: "hotel", title: "ホテルAZ 山梨甲府南IC店 チェックイン",
+      url: "https://www.az-hotel.com/koufu_s/", addr: "山梨県甲府市下曽根町423-1" },
+    { time: "18:30", end: "20:30", type: "eat", title: "夜ごはん", note: "候補から選ぼう！",
+      cands: [
+        { name: "ヘルシーレストラン パセリ本店", url: "https://tabelog.com/yamanashi/A1901/A190101/19009650/", addr: "山梨県甲府市後屋町429" },
+        { name: "イオンモール甲府昭和（サイゼリヤなど）", url: "https://kofushowa.aeonmall.jp/", addr: "山梨県中巨摩郡昭和町飯喰1505-1" }
+      ] },
+    { time: "21:00", end: "22:30", type: "onsen", title: "温泉 みはらしの丘 みたまの湯",
+      url: "https://www.mitamanoyu.jp/", addr: "山梨県西八代郡市川三郷町大塚2608", note: "ゆっくりあったまろう ♨️" }
+  ]},
+  { id: "d2", title: "2日目", date: "9/22", items: [
+    { time: "朝", type: "eat", title: "朝ごはんはホテルで", mini: true },
+    { time: "9:30", label: "", type: "hotel", title: "チェックアウト", mini: true },
+    { time: "10:00", end: "11:30", type: "sight", title: "桔梗屋工場（桔梗信玄餅テーマパーク）",
+      url: "https://themepark.kikyouya.co.jp/", addr: "山梨県笛吹市一宮町坪井1928" },
+    { time: "12:00", end: "14:00", type: "sight", title: "富士展望の丘 ふじさんデッキ＆ハーブ園",
+      url: "https://herb-fuji.com/%E3%81%B5%E3%81%98%E3%81%95%E3%82%93%E3%83%87%E3%83%83%E3%82%AD/",
+      addr: "山梨県南都留郡富士河口湖町船津1996" },
+    { time: "14:00", end: "15:00", type: "eat", title: "お昼ごはん", note: "昨日のお昼ごはんの候補から選ぼう！" },
+    { time: "15:00", label: "〜", type: "sight", title: "時間が巻いていれば…", note: "どちらかに寄り道！",
+      cands: [
+        { name: "富士山世界遺産センター", url: "https://www.fujisan-whc.jp/", addr: "山梨県南都留郡富士河口湖町船津6663-1" },
+        { name: "道の駅 富士吉田", url: "https://fujiyoshida.net/spot/index.php?p=11", addr: "山梨県富士吉田市新屋3丁目7-3" }
+      ] },
+    { time: "帰宅", type: "move", title: "下道 or 高速道路で帰宅", note: "おつかれさま！おうちに帰ろう 🏠", mini: true }
+  ]}
+];
+
+const esc = s => String(s).replace(/[&<>"]/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
+const mapEmbed = a => "https://www.google.com/maps?q=" + encodeURIComponent(a) + "&output=embed&hl=ja";
+const mapLink  = a => "https://www.google.com/maps/search/?api=1&query=" + encodeURIComponent(a);
+
+let mapId = 0;
+function placeBlock(name, url, addr, isCand) {
+  const id = "m" + (mapId++);
+  const nameHtml = isCand ? `<b>${esc(name)}</b>` : "";
+  return `${nameHtml}
+    <div class="addr">${esc(addr)}</div>
+    <div class="links">
+      <button class="btn" onclick="toggleMap('${id}', '${esc(mapEmbed(addr))}')">🗺️ 地図を見る</button>
+      <a class="btn" href="${esc(mapLink(addr))}" target="_blank" rel="noopener">Googleマップで開く</a>
+      <a class="btn" href="${esc(url)}" target="_blank" rel="noopener">🔗 公式サイト</a>
+    </div>
+    <div class="map" id="${id}"></div>
+    <div class="qr-mini" data-url="${esc(mapLink(addr))}"><span></span>地図</div>`;
+}
+
+function timeHtml(it) {
+  if (it.end) return `${esc(it.time)}<small>〜${esc(it.end)}</small>`;
+  return `${esc(it.time)}${it.label ? `<small>${esc(it.label)}</small>` : ""}`;
+}
+
+function itemHtml(it) {
+  let body = `<h3><span class="tag">${TYPES[it.type]}</span>${esc(it.title)}</h3>`;
+  if (it.note) body += `<p class="note">${esc(it.note)}</p>`;
+  if (it.addr) body += placeBlock(it.title, it.url, it.addr, false);
+  if (it.cands) body += `<ul class="cands">` +
+    it.cands.map(c => `<li>${placeBlock(c.name, c.url, c.addr, true)}</li>`).join("") + `</ul>`;
+  return `<li class="item type-${it.type}${it.mini ? " mini" : ""}">
+    <div class="time">${timeHtml(it)}</div><div class="card">${body}</div></li>`;
+}
+
+document.getElementById("app").innerHTML = DAYS.map((d, i) => `
+  <section>
+    <h2 class="day-title d${i + 1}"><span class="pill">${d.title}</span><span>${d.date}</span></h2>
+    <ol class="timeline">${d.items.map(itemHtml).join("")}</ol>
+  </section>`).join("");
+
+function toggleMap(id, src) {
+  const el = document.getElementById(id);
+  if (!el.firstChild) el.innerHTML = `<iframe src="${src}" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>`;
+  el.classList.toggle("open");
+}
+
+// 各施設のGoogleマップQR（印刷時のみ表示）
+try {
+  document.querySelectorAll(".qr-mini").forEach(el => new QRCode(el.querySelector("span"), { text: el.dataset.url, width: 120, height: 120, correctLevel: QRCode.CorrectLevel.L }));
+} catch (e) {}
+
+// 印刷用QR（このページのURL）
+try {
+  new QRCode(document.getElementById("qr"), { text: location.href.split("#")[0], width: 160, height: 160, correctLevel: QRCode.CorrectLevel.M });
+} catch (e) { /* オフライン時はQRなし */ }
+</script>
+</body>
+</html>
